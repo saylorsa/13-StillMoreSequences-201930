@@ -104,9 +104,16 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+
+    mindex = 0
+    for k in range(1, len(strings)):
+        if len(strings[k]) < len(strings[mindex]):
+            mindex = k
+
+    return strings[mindex]
 
 
 def run_test_index_of_largest_number():
@@ -184,6 +191,12 @@ def index_of_largest_number(numbers, n):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    maxdex = 0
+    for k in range(n):
+        if numbers[k] > numbers[maxdex]:
+            maxdex = k
+
+    return maxdex
 
 
 # -----------------------------------------------------------------------------
@@ -239,6 +252,13 @@ def number_of_stutters(s):
     # TODO: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+
+    count = 0
+    for k in range(len(s) - 1):
+        if s[k + 1] == s[k]:
+            count = count + 1
+
+    return count
 
 
 def run_test_is_palindrome():
@@ -318,6 +338,13 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ###########################################################################
     # -------------------------------------------------------------------------
+    last = len(s) - 1
+    for k in range(len(s)):
+        if s[k] != s[last]:
+            return False
+        else:
+            last = last - 1
+    return True
 
 
 # -----------------------------------------------------------------------------
@@ -379,6 +406,12 @@ def count_same(sequence1, sequence2):
     # TODO: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    count = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            count = count + 1
+
+    return count
 
 
 # -----------------------------------------------------------------------------
